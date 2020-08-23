@@ -166,7 +166,7 @@ def main():
         delite_wall()
     if num_menu == "6":
         token_valid()
-    if num_menu == "6":
+    if num_menu == "7":
         chat()
     if num_menu == "0":
         os.system(e) 
