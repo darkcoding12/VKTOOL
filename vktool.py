@@ -46,6 +46,7 @@ def chat():
     a = vk.friends.get()
     id = vk.friends.get()['items']
     list = id
+    namechat = input('[Название Беседы] ► ')
     while(id):
         for ids in id:
             print('Беседа создана!')
