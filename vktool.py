@@ -115,7 +115,7 @@ def spam():
         try:
             ange = randint(666666, 99999999)
             vk.messages.send(user_id=ange, message=mes, random_id=get_random_id())
-            time.sleep(3)
+            time.sleep(25)
             print("Успешно отправленно!")
         except Exception as e:
             print('Стоят настройки приватности!')
