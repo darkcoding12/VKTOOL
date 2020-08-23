@@ -39,7 +39,7 @@ menu = """
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 """
 #создать беседу тест
-def chat()
+def chat():
     tok = input("[ACCESS-TOKEN] ► ") 
     token = vk_api.VkApi(token = tok) 
     vk = token.get_api()
