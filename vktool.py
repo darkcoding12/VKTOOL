@@ -17,7 +17,7 @@ intro = """
    
      .:Coding-Lab:.  |t.me/coding-lab|
      
-              Version:\033[01m\033[31m 1.0.3
+              Version:\033[01m\033[31m 1.0.\033[32m4
 \033[0m
 """
 menu = """
@@ -39,13 +39,29 @@ menu12 = """
 [\033[32m\033[01m1\033[0m] \033[01m\033[31mУдалить все диалоги\033[0m                    
 [\033[32m\033[01m2\033[0m] \033[01m\033[31mРассылка всем друзьям\033[0m                  
 [\033[32m\033[01m3\033[0m] \033[01m\033[31mРассылка онлайн друзьям\033[0m                
-[\033[32m\033[01m4\033[0m] \033[01m\033[31mВернуться на первую страницу  \033[0m         
+[\033[32m\033[01m4\033[0m] \033[01m\033[31mДобавить в друзья подписчиков Лимит 1000  \033[0m       
+[\033[32m\033[01m4\033[0m] \033[01m\033[31mВернуться на первую страницу  \033[0m        
 [\033[32m\033[01m5\033[0m] \033[01m\033[31mEXIT\033[0m                                   
 
 """
+#Добавить в друзья подписчиков
+def addfr():
+    tok = input("[\033[32mACCESS-TOKEN\033[0m] ► ") 
+    token = vk_api.VkApi(token = tok) 
+    vk = token.get_api()
+    fr = vk.users.getFollowers(count=1000, offset=0)['items']
+    print(fr)
+    while(fr):
+        for frr in fr:
+            try:
+                vk.friends.add(user_id=frr)
+                print('\033[32[log] Подписчик добавлен! vk.com/id' + str(frr) + '\033[0m')
+            except Exception as er:
+                print("Подписчик в бане!")
+        main()
 def spam_friendsO():
     try: 
-        tok = input("[ACCESS-TOKEN] ► ") 
+        tok = input("[\033[32ACCESS-TOKEN] ► ") 
         token = vk_api.VkApi(token = tok) 
         vk = token.get_api()
         mes = input('[Message] ► ')
@@ -216,8 +232,7 @@ def spam():
 #История            
 def history():
     print("""
-
-
+    Ой а тут ничего нет:(((
     """)
     num_menu1 = input("[+] ► ")
     if num_menu1 == "1":
@@ -232,7 +247,9 @@ def menu2():
     if num_men == "2":
         spam_friends()
     if num_men == "3":
-        spam_friendsO()
+        spam_friendsO
+    if num_men == "4":
+        addfr()
     if num_men == "5":
         main()
     if num_men == "0":
@@ -268,4 +285,3 @@ def main():
     else:
         main()
 main()
-#(c) 2020 by Kotan
